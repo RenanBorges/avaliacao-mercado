@@ -2,10 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using avaliacao_mercado.domain.models;
+using avaliacao_mercado.domain.repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,9 +28,22 @@ namespace avaliacao_mercado
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddDbContext<AppDbContext>(optionns =>
+            optionns.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             ///services.AddDbContext<TodoContext>(opt =>
            // opt.UseInMemoryDatabase("TodoList"));
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder
+                   .AllowAnyMethod()
+                   .AllowAnyHeader()
+                   .SetIsOriginAllowed((host) => true)
+                   .AllowCredentials());
+            });
+
+            services.AddScoped<IProductRepository, ProductRepository>();
             services.AddControllers();
 
             // Register the Swagger generator, defining 1 or more Swagger documents
@@ -56,6 +72,9 @@ namespace avaliacao_mercado
             });
 
             app.UseRouting();
+
+            app.UseCors("CorsPolicy");
+            app.UseStaticFiles();
 
             app.UseAuthorization();
 

@@ -1,1 +1,35 @@
-<p>home works!</p>
+<div class="container">
+  <div class="card list-car">
+    <h5 class="card-header">Lista de Produtos</h5>
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Imagem</th>
+            <th scope="col">Editar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.image }}</td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-warning btn-sm"
+                (click)="editProduct(product)"
+              >
+                Editar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

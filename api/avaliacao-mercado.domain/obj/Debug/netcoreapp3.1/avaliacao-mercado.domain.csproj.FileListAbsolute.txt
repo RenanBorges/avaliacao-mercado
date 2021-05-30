@@ -1,0 +1,11 @@
+C:\projects\mercadoAvaliacao\avaliacao-mercado\api\avaliacao-mercado.domain\bin\Debug\netcoreapp3.1\avaliacao-mercado.domain.deps.json
+C:\projects\mercadoAvaliacao\avaliacao-mercado\api\avaliacao-mercado.domain\bin\Debug\netcoreapp3.1\avaliacao-mercado.domain.runtimeconfig.json
+C:\projects\mercadoAvaliacao\avaliacao-mercado\api\avaliacao-mercado.domain\bin\Debug\netcoreapp3.1\avaliacao-mercado.domain.runtimeconfig.dev.json
+C:\projects\mercadoAvaliacao\avaliacao-mercado\api\avaliacao-mercado.domain\bin\Debug\netcoreapp3.1\avaliacao-mercado.domain.dll
+C:\projects\mercadoAvaliacao\avaliacao-mercado\api\avaliacao-mercado.domain\bin\Debug\netcoreapp3.1\avaliacao-mercado.domain.pdb
+C:\projects\mercadoAvaliacao\avaliacao-mercado\api\avaliacao-mercado.domain\obj\Debug\netcoreapp3.1\avaliacao-mercado.domain.AssemblyInfoInputs.cache
+C:\projects\mercadoAvaliacao\avaliacao-mercado\api\avaliacao-mercado.domain\obj\Debug\netcoreapp3.1\avaliacao-mercado.domain.AssemblyInfo.cs
+C:\projects\mercadoAvaliacao\avaliacao-mercado\api\avaliacao-mercado.domain\obj\Debug\netcoreapp3.1\avaliacao-mercado.domain.csproj.CoreCompileInputs.cache
+C:\projects\mercadoAvaliacao\avaliacao-mercado\api\avaliacao-mercado.domain\obj\Debug\netcoreapp3.1\avaliacao-mercado.domain.dll
+C:\projects\mercadoAvaliacao\avaliacao-mercado\api\avaliacao-mercado.domain\obj\Debug\netcoreapp3.1\avaliacao-mercado.domain.pdb
+C:\projects\mercadoAvaliacao\avaliacao-mercado\api\avaliacao-mercado.domain\obj\Debug\netcoreapp3.1\avaliacao-mercado.domain.genruntimeconfig.cache

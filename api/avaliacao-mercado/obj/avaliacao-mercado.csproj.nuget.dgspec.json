@@ -4,14 +4,14 @@
     "C:\\projects\\mercadoAvaliacao\\avaliacao-mercado\\api\\avaliacao-mercado\\avaliacao-mercado.csproj": {}
   },
   "projects": {
-    "C:\\projects\\mercadoAvaliacao\\avaliacao-mercado\\api\\avaliacao-mercado\\avaliacao-mercado.csproj": {
+    "C:\\projects\\mercadoAvaliacao\\avaliacao-mercado\\api\\avaliacao-mercado.domain\\avaliacao-mercado.domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\projects\\mercadoAvaliacao\\avaliacao-mercado\\api\\avaliacao-mercado\\avaliacao-mercado.csproj",
-        "projectName": "avaliacao-mercado",
-        "projectPath": "C:\\projects\\mercadoAvaliacao\\avaliacao-mercado\\api\\avaliacao-mercado\\avaliacao-mercado.csproj",
+        "projectUniqueName": "C:\\projects\\mercadoAvaliacao\\avaliacao-mercado\\api\\avaliacao-mercado.domain\\avaliacao-mercado.domain.csproj",
+        "projectName": "avaliacao-mercado.domain",
+        "projectPath": "C:\\projects\\mercadoAvaliacao\\avaliacao-mercado\\api\\avaliacao-mercado.domain\\avaliacao-mercado.domain.csproj",
         "packagesPath": "C:\\Users\\renan\\.nuget\\packages\\",
-        "outputPath": "C:\\projects\\mercadoAvaliacao\\avaliacao-mercado\\api\\avaliacao-mercado\\obj\\",
+        "outputPath": "C:\\projects\\mercadoAvaliacao\\avaliacao-mercado\\api\\avaliacao-mercado.domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\renan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,86 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\projects\\mercadoAvaliacao\\avaliacao-mercado\\api\\avaliacao-mercado\\avaliacao-mercado.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\projects\\mercadoAvaliacao\\avaliacao-mercado\\api\\avaliacao-mercado\\avaliacao-mercado.csproj",
+        "projectName": "avaliacao-mercado",
+        "projectPath": "C:\\projects\\mercadoAvaliacao\\avaliacao-mercado\\api\\avaliacao-mercado\\avaliacao-mercado.csproj",
+        "packagesPath": "C:\\Users\\renan\\.nuget\\packages\\",
+        "outputPath": "C:\\projects\\mercadoAvaliacao\\avaliacao-mercado\\api\\avaliacao-mercado\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\renan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\projects\\mercadoAvaliacao\\avaliacao-mercado\\api\\avaliacao-mercado.domain\\avaliacao-mercado.domain.csproj": {
+                "projectPath": "C:\\projects\\mercadoAvaliacao\\avaliacao-mercado\\api\\avaliacao-mercado.domain\\avaliacao-mercado.domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
