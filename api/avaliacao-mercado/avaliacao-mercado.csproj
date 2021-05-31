@@ -18,13 +18,5 @@
     <ProjectReference Include="..\avaliacao-mercado.domain\avaliacao-mercado.domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Include="wwwroot\images\a9cf8d81-1ffb-47f1-a254-5856e7c3a7ed_download.jpg" />
-    <None Include="wwwroot\images\ab32539e-72e0-4ad9-8f6a-c02520be4a29_download.jpg" />
-    <None Include="wwwroot\images\b10e2e59-fab1-485e-8e31-037bb6d2f794_download.jpg" />
-    <None Include="wwwroot\images\d39d27ea-d3d9-4ad3-b4f8-3d2b34fce9b4_download.jpg" />
-    <None Include="wwwroot\images\d786149e-8881-41ee-ba80-6d2ae4b4f9b4_download.jpg" />
-  </ItemGroup>
-
 
 </Project>
