@@ -14,10 +14,16 @@ namespace avaliacao_mercado.domain.repositories
         {
             _context = context;
         }
-        public async Task AddProduct(Product product)
+        public async Task<Product> AddProduct(Product product)
         {
             _context.Products.Add(product);
-            await _context.SaveChangesAsync();           
+            await _context.SaveChangesAsync();
+            return product;
+        }
+
+        public async Task<Product> GetProduct(int id)
+        {
+          return await  _context.Products.FindAsync(id);
         }
 
         public async Task<IEnumerable<Product>> GetProducts()

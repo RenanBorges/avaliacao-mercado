@@ -1,7 +1,15 @@
 <div class="container">
   <div class="card list-car">
     <h5 class="card-header">Lista de Produtos</h5>
+
     <div class="card-body">
+      <span
+        routerLink="/createAndEdit"
+        style="float: right"
+        routerLinkActive="active"
+        class="btn btn-primary"
+        >Novo Produto</span
+      >
       <table class="table">
         <thead>
           <tr>
@@ -17,15 +25,17 @@
             <td>{{ product.id }}</td>
             <td>{{ product.name }}</td>
             <td>{{ product.price }}</td>
-            <td>{{ product.image }}</td>
+            <td><img [src]="product.image" *ngIf="product.image" /></td>
             <td>
-              <button
+              <span
                 type="button"
                 class="btn btn-warning btn-sm"
-                (click)="editProduct(product)"
+                [routerLink]="['/createAndEdit']"
+                routerLinkActive="active"
+                [state]="product"
               >
                 Editar
-              </button>
+              </span>
             </td>
           </tr>
         </tbody>

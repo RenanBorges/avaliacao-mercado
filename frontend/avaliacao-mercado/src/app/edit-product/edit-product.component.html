@@ -1,0 +1,57 @@
+<div>
+  <h2>{{ compTitle }}</h2>
+  <form [formGroup]="myForm" (ngSubmit)="submit()">
+    <div class="form-group">
+      <label class="control-label required" for="name">Name</label>
+      <input
+        formControlName="name"
+        id="name"
+        type="text"
+        class="form-control"
+      />
+      <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">
+        <div *ngIf="f.name.errors?.required">Nome é obrigatório.</div>
+        <div *ngIf="f.name.errors?.minlength">nome precisa de 3 character.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label required" for="price">Preço</label>
+      <input
+        formControlName="price"
+        id="price"
+        type="number"
+        class="form-control"
+      />
+      <div
+        *ngIf="f.price.touched && f.price.invalid"
+        class="alert alert-danger"
+      >
+        <div *ngIf="f.price.errors?.required">preço é obrigatório.</div>
+        <div *ngIf="f.price.errors?.min">preço deveria ser maior que 0.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label required" for="image">Imagem</label>
+      <input
+        formControlName="image"
+        id="image"
+        type="file"
+        accept=".png,.jpg"
+        class="form-control"
+        (change)="onFileChange($event)"
+      />
+      <div
+        *ngIf="f.image.touched && f.image.invalid"
+        class="alert alert-danger"
+      >
+        <div *ngIf="f.image.errors?.required">Imagem é obrigatório.</div>
+      </div>
+    </div>
+
+    <img [src]="imageSrc" *ngIf="imageSrc" />
+
+    <button class="btn btn-primary" type="submit">{{ submitText }}</button>
+  </form>
+</div>

@@ -9,6 +9,7 @@ import { ProductService } from '../services/product.service';
 })
 export class HomeComponent implements OnInit {
   constructor(private productService: ProductService) {}
+  imagePath: string = 'https://localhost:5001/images/';
   products: Product[] = [];
   ngOnInit(): void {
     this.getProducts();
@@ -16,7 +17,10 @@ export class HomeComponent implements OnInit {
 
   getProducts() {
     this.productService.getProducts().subscribe((prods) => {
-      this.products = prods;
+      this.products = prods.map((p: Product) => ({
+        ...p,
+        image: this.imagePath + p.image,
+      }));
     });
   }
 

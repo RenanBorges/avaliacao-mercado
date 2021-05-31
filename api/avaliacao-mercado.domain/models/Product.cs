@@ -15,7 +15,7 @@ namespace avaliacao_mercado.domain.models
         [Column(TypeName = "money")]
         public decimal Price { get; set; }
         [Required]
-        [Column(TypeName = "varchar(30)")]
+        [Column(TypeName = "varchar(200)")]
         public string Image { get; set; }
     }
 }

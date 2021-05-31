@@ -9,3 +9,4 @@ C:\projects\mercadoAvaliacao\avaliacao-mercado\api\avaliacao-mercado.domain\obj\
 C:\projects\mercadoAvaliacao\avaliacao-mercado\api\avaliacao-mercado.domain\obj\Debug\netcoreapp3.1\avaliacao-mercado.domain.dll
 C:\projects\mercadoAvaliacao\avaliacao-mercado\api\avaliacao-mercado.domain\obj\Debug\netcoreapp3.1\avaliacao-mercado.domain.pdb
 C:\projects\mercadoAvaliacao\avaliacao-mercado\api\avaliacao-mercado.domain\obj\Debug\netcoreapp3.1\avaliacao-mercado.domain.genruntimeconfig.cache
+C:\projects\mercadoAvaliacao\avaliacao-mercado\api\avaliacao-mercado.domain\obj\Debug\netcoreapp3.1\avaliacao-mercado.domain.csproj.AssemblyReference.cache

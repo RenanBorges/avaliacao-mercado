@@ -3,15 +3,16 @@
 
 html,
 body {
-  height: 100%;
-}
-body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .main-container {
   margin-top: 5%;
-  background-color: #9999;
   padding: 50px;
+}
+
+img {
+  max-width: 150px;
+  max-height: 200px;
 }

@@ -27,6 +27,21 @@ export class ProductService {
       .pipe(catchError(this.handleError));
   }
 
+  creatProduct(product: any, img: any): Observable<any> {
+    let formData = this.prepareProjectFormData(product, img);
+
+    return this.httpClient
+      .post<any>(this.baseUrl, formData)
+      .pipe(catchError(this.handleError));
+  }
+
+  editProduct(product: any, img: any, id: string): Observable<any> {
+    let formData = this.prepareProjectFormData(product, img);
+    return this.httpClient
+      .put<any>(this.baseUrl + `/${id}`, formData)
+      .pipe(catchError(this.handleError));
+  }
+
   handleError(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
@@ -36,5 +51,13 @@ export class ProductService {
     }
     console.log(errorMessage);
     return throwError(errorMessage);
+  }
+
+  private prepareProjectFormData(product: any, img: any) {
+    let formData: FormData = new FormData();
+    formData.append('name', product.name);
+    formData.append('price', product.price);
+    formData.append('image', img);
+    return formData;
   }
 }
