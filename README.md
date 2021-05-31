@@ -1,6 +1,9 @@
 # AvaliacaoMercado
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.2.
+Angular 12.0.2.
+Node 14.16.0
+npm 6.14.11
+.NET Core 3.1
 
 ## Testando a Aplicação
 
