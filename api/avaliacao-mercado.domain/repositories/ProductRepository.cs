@@ -7,34 +7,18 @@ using System.Threading.Tasks;
 
 namespace avaliacao_mercado.domain.repositories
 {
-    public class ProductRepository : IProductRepository
+    public class ProductRepository : GenericRepository<Product>, IProductRepository
     {
-        private readonly AppDbContext _context;
-        public ProductRepository(AppDbContext context)
+        private readonly AppDbContext context;
+        public ProductRepository(AppDbContext context): base(context)
         {
-            _context = context;
-        }
-        public async Task<Product> AddProduct(Product product)
-        {
-            _context.Products.Add(product);
-            await _context.SaveChangesAsync();
-            return product;
+            this.context = context;
         }
 
-        public async Task<Product> GetProduct(int id)
+        //just an example to express de flexibility of this aproach
+        async Task<Product> get(int id)
         {
-          return await  _context.Products.FindAsync(id);
-        }
-
-        public async Task<IEnumerable<Product>> GetProducts()
-        {
-            return await _context.Products.ToListAsync();
-        }
-
-        public async Task UpdateProduct(Product product)
-        {
-            _context.Entry(product).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
+            return await context.Products.FindAsync(id);
         }
     }
 }

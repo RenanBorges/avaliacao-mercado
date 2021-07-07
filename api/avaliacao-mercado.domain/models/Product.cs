@@ -1,10 +1,11 @@
 ﻿
+using avaliacao_mercado.domain.repositories;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace avaliacao_mercado.domain.models
 {
-    public class Product
+    public class Product: IEntity
     {
         public int Id { get; set; }
 

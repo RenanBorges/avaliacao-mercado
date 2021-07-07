@@ -28,7 +28,7 @@ namespace avaliacao_mercado.Controllers
         [Produces("application/json")]
         public async Task<ActionResult> GetProducts()
         {
-            var result = await _repo.GetProducts();
+            var result = await _repo.GetEntities();
             return  Ok(result) as ActionResult;
         }
 
@@ -44,7 +44,7 @@ namespace avaliacao_mercado.Controllers
 
                 Helpers helper = new Helpers(_environment);
                 string imageName = helper.UploadedFile(product.Image);
-                var result = await _repo.AddProduct(new Product()
+                var result = await _repo.AddEntity(new Product()
                 {
                     Name = product.Name,
                     Price = product.Price,
@@ -66,7 +66,7 @@ namespace avaliacao_mercado.Controllers
         {
             try
             {
-                var prod = await _repo.GetProduct(id);
+                var prod = await _repo.GetEntity(id);
                 if (prod == null) return NotFound();
                 if (product.Image != null && prod.Image != product.Image.FileName)
                 {
@@ -78,7 +78,7 @@ namespace avaliacao_mercado.Controllers
 
                 prod.Name = product.Name;
                 prod.Price = product.Price;
-                await _repo.UpdateProduct(prod);
+                await _repo.UpdateEntity(prod);
 
                 return NoContent();
             }
