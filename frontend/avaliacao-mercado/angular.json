@@ -26,7 +26,7 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [             
+            "styles": [
               "src/styles.css"
             ],
             "scripts": []
@@ -94,7 +94,6 @@
               "src/assets"
             ],
             "styles": [
-              
               "src/styles.css"
             ],
             "scripts": []
@@ -103,5 +102,8 @@
       }
     }
   },
-  "defaultProject": "avaliacao-mercado"
+  "defaultProject": "avaliacao-mercado",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

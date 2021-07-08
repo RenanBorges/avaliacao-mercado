@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { Product } from '../models/product';
+import { ModelProduct, Product } from '../models/product';
 import { ProductService } from '../services/product.service';
+import * as ProductActions from '../product/store/action/product.actions';
 
 @Component({
   selector: 'app-edit-product',
@@ -13,7 +15,8 @@ import { ProductService } from '../services/product.service';
 export class EditProductComponent implements OnInit {
   constructor(
     private productService: ProductService,
-    private _router: Router
+    private _router: Router,
+    private store: Store
   ) {}
   compTitle: string = '';
   submitText: string = '';
@@ -32,22 +35,21 @@ export class EditProductComponent implements OnInit {
     return this.myForm.controls;
   }
 
+  saveProduct(product: ModelProduct, img: any) {
+    this.store.dispatch(ProductActions.AddProduct({ product, img }));
+  }
+  editProduct(product: ModelProduct, img: any, id: string) {
+    this.store.dispatch(ProductActions.EditProduct({ product, img, id }));
+  }
+
   submit() {
     if (this.myForm.valid) {
       if (!this.product.id) {
-        this.productService
-          .creatProduct(this.myForm.value, this.img)
-          .subscribe((pro) => {
-            console.log(pro);
-            this._router.navigate(['']);
-          });
+        this.saveProduct(this.myForm.value, this.img);
+        this._router.navigate(['']);
       } else {
-        this.productService
-          .editProduct(this.myForm.value, this.img, this.product.id)
-          .subscribe((pro) => {
-            console.log(pro);
-            this._router.navigate(['']);
-          });
+        this.editProduct(this.myForm.value, this.img, this.product.id);
+        this._router.navigate(['']);
       }
     } else {
       this.validateAllFormFields(this.myForm);

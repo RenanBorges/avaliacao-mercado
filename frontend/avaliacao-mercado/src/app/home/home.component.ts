@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product';
 import { ProductService } from '../services/product.service';
+import { Store } from '@ngrx/store';
+import * as fromRoot from '../reducers/index';
+import { takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
+import * as ProductActions from '../product/store/action/product.actions';
 
 @Component({
   selector: 'app-home',
@@ -8,23 +13,33 @@ import { ProductService } from '../services/product.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private productService: ProductService) {}
+  constructor(
+    private productService: ProductService,
+    private readonly store: Store
+  ) {
+    this.getProdutsWithStore();
+  }
   imagePath: string = 'https://localhost:5001/images/';
-  products: Product[] = [];
+  storeProducts: Product[] | null = null;
   ngOnInit(): void {
-    this.getProducts();
+    this.getProdutsWithStore();
+    if (this.storeProducts == null) {
+      this.store.dispatch(ProductActions.GetProducts());
+      this.getProdutsWithStore();
+    }
   }
 
-  getProducts() {
-    this.productService.getProducts().subscribe((prods) => {
-      this.products = prods.map((p: Product) => ({
-        ...p,
-        image: this.imagePath + p.image,
-      }));
-    });
+  getProdutsWithStore() {
+    this.store
+      .select(fromRoot.getProducts)
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((data) => (this.storeProducts = data.products));
   }
 
-  editProduct(prod: Product) {
-    console.log(prod);
+  destroy$: Subject<boolean> = new Subject<boolean>();
+
+  ngOnDestroy() {
+    this.destroy$.next(true);
+    this.destroy$.unsubscribe();
   }
 }

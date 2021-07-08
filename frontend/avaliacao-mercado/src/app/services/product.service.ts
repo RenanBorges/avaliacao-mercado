@@ -6,7 +6,7 @@ import {
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
-import { Product } from '../models/product';
+import { ModelProduct, Product } from '../models/product';
 
 @Injectable({
   providedIn: 'root',
@@ -27,7 +27,7 @@ export class ProductService {
       .pipe(catchError(this.handleError));
   }
 
-  creatProduct(product: any, img: any): Observable<any> {
+  creatProduct(product: ModelProduct, img: any): Observable<any> {
     let formData = this.prepareProjectFormData(product, img);
 
     return this.httpClient
@@ -35,7 +35,7 @@ export class ProductService {
       .pipe(catchError(this.handleError));
   }
 
-  editProduct(product: any, img: any, id: string): Observable<any> {
+  editProduct(product: ModelProduct, img: any, id: string): Observable<any> {
     let formData = this.prepareProjectFormData(product, img);
     return this.httpClient
       .put<any>(this.baseUrl + `/${id}`, formData)
