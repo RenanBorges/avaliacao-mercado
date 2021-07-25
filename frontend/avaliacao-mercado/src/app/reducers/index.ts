@@ -17,6 +17,7 @@ export const reducers: ActionReducerMap<State> = {
 
 export const getProductState =
   createFeatureSelector<fromProduct.ProductState>('products');
+
 export const getProducts = createSelector(
   getProductState,
   fromProduct.getProducts

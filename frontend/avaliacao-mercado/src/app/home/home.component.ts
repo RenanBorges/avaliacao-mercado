@@ -13,10 +13,7 @@ import * as ProductActions from '../product/store/action/product.actions';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor(
-    private productService: ProductService,
-    private readonly store: Store
-  ) {
+  constructor(private readonly store: Store) {
     this.getProdutsWithStore();
   }
   imagePath: string = 'https://localhost:5001/images/';

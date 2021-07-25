@@ -13,11 +13,7 @@ import * as ProductActions from '../product/store/action/product.actions';
   styleUrls: ['./edit-product.component.css'],
 })
 export class EditProductComponent implements OnInit {
-  constructor(
-    private productService: ProductService,
-    private _router: Router,
-    private store: Store
-  ) {}
+  constructor(private _router: Router, private store: Store) {}
   compTitle: string = '';
   submitText: string = '';
   error: string = '';
